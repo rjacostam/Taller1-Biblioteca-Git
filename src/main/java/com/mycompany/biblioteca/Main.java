@@ -91,5 +91,16 @@ public static void createBook() {
     System.out.println("Book registered successfully.");
 }
 
+public static void listBooks() {
+    System.out.println("\n--- Book List ---");
+    if (books.isEmpty()) {
+        System.out.println("No books found.");
+        return;
+    }
+    for (Book b : books) {
+        System.out.println("Code: " + b.getCode() + " | Title: " + b.getTitle() + " | Author: " + b.getAuthor() + " | Available: " + (b.isAvailable() ? "Yes" : "No"));
+    }
+}
+
     
 }
