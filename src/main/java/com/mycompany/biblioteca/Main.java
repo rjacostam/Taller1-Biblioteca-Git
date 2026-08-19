@@ -13,9 +13,45 @@ public class Main {
 
 
 
-    public static void main(String[] args) {
-       
-    }
+   public static void main(String[] args) {
+    int option;
+    do {
+        System.out.println("\n==================================");
+        System.out.println("   MUNICIPAL LIBRARY SYSTEM   ");
+        System.out.println("==================================");
+        System.out.println("1. Register Client");
+        System.out.println("2. List Clients");
+        System.out.println("3. Update Client");
+        System.out.println("4. Delete Client");
+        System.out.println("5. Register Book");
+        System.out.println("6. List Books");
+        System.out.println("7. Process Loan");
+        System.out.println("8. Process Return");
+        System.out.println("9. List Active Loans");
+        System.out.println("0. Exit");
+        System.out.print("Select an option: ");
+        try {
+            option = Integer.parseInt(sc.nextLine());
+        } catch (NumberFormatException e) {
+            option = -1;
+        }
+
+        switch (option) {
+            case 1: createClient(); break;
+            case 2: listClients(); break;
+            case 3: updateClient(); break;
+            case 4: deleteClient(); break;
+            case 5: createBook(); break;
+            case 6: listBooks(); break;
+            case 7: registerLoan(); break;
+            case 8: registerReturn(); break;
+            case 9: listActiveLoans(); break;
+            case 0: System.out.println("Closing system..."); break;
+            default: System.out.println("Invalid option. Try again.");
+        }
+    } while (option != 0);
+}
+
     
 public static void createClient() {
     System.out.println("\n--- Register Client ---");
