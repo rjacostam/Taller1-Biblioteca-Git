@@ -102,5 +102,15 @@ public static void listBooks() {
     }
 }
 
+public static Book findBookByCode(String code) {
+    for (Book b : books) {
+        if (b.getCode().equals(code)) {
+            return b;
+        }
+    }
+    return null;
+}
+
+
     
 }
