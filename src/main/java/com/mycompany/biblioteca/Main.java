@@ -13,11 +13,11 @@ public class Main {
 
 
 
-   public static void main(String[] args) {
+public static void main(String[] args) {
     int option;
     do {
         System.out.println("\n==================================");
-        System.out.println("   MUNICIPAL LIBRARY SYSTEM   ");
+        System.out.println("     MUNICIPAL LIBRARY SYSTEM     ");
         System.out.println("==================================");
         System.out.println("1. Register Client");
         System.out.println("2. List Clients");
@@ -25,9 +25,11 @@ public class Main {
         System.out.println("4. Delete Client");
         System.out.println("5. Register Book");
         System.out.println("6. List Books");
-        System.out.println("7. Process Loan");
-        System.out.println("8. Process Return");
-        System.out.println("9. List Active Loans");
+        System.out.println("7. Update Book");
+        System.out.println("8. Delete Book");
+        System.out.println("9. Process Loan");
+        System.out.println("10. Process Return");
+        System.out.println("11. List Active Loans");
         System.out.println("0. Exit");
         System.out.print("Select an option: ");
         try {
@@ -43,14 +45,18 @@ public class Main {
             case 4: deleteClient(); break;
             case 5: createBook(); break;
             case 6: listBooks(); break;
-            case 7: registerLoan(); break;
-            case 8: registerReturn(); break;
-            case 9: listActiveLoans(); break;
+            case 7: updateBook(); break;
+            case 8: deleteBook(); break;
+            case 9: registerLoan(); break;
+            case 10: registerReturn(); break;
+            case 11: listActiveLoans(); break;
             case 0: System.out.println("Closing system..."); break;
             default: System.out.println("Invalid option. Try again.");
         }
     } while (option != 0);
 }
+
+
 
     
 public static void createClient() {
