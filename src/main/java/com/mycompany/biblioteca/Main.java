@@ -173,6 +173,27 @@ public static void registerLoan() {
     System.out.println("Loan processed successfully.");
 }
 
+public static void registerReturn() {
+    System.out.println("\n--- Register Return ---");
+    System.out.print("Enter Book Code to return: ");
+    String bookCode = sc.nextLine();
+    Book b = findBookByCode(bookCode);
+    if (b == null) { 
+        System.out.println("Book not found."); 
+        return; 
+    }
+    
+    for (Loan l : loans) {
+        if (l.getBook().getCode().equals(bookCode) && l.getStatus().equals("Active")) {
+            l.setStatus("Returned");
+            b.setAvailable(true);
+            System.out.println("Return completed successfully.");
+            return;
+        }
+    }
+    System.out.println("No active loan found for this book.");
+}
+
 
 
     
