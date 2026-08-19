@@ -8,6 +8,9 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
     
     static ArrayList<Book> books = new ArrayList<>();
+    
+    static ArrayList<Loan> loans = new ArrayList<>();
+
 
 
     public static void main(String[] args) {
@@ -139,6 +142,37 @@ public static void deleteBook() {
     books.remove(b);
     System.out.println("Book deleted successfully.");
 }
+
+public static void registerLoan() {
+    System.out.println("\n--- Register Loan ---");
+    System.out.print("Enter Client ID: ");
+    String clientId = sc.nextLine();
+    Client c = findClientById(clientId);
+    if (c == null) { 
+        System.out.println("Client not found."); 
+        return; 
+    }
+    
+    System.out.print("Enter Book Code: ");
+    String bookCode = sc.nextLine();
+    Book b = findBookByCode(bookCode);
+    if (b == null) { 
+        System.out.println("Book not found."); 
+        return; 
+    }
+    if (!b.isAvailable()) { 
+        System.out.println("This book is already loaned."); 
+        return; 
+    }
+
+    System.out.print("Enter Loan ID: ");
+    String loanId = sc.nextLine();
+    
+    b.setAvailable(false);
+    loans.add(new Loan(loanId, c, b));
+    System.out.println("Loan processed successfully.");
+}
+
 
 
     
