@@ -194,6 +194,20 @@ public static void registerReturn() {
     System.out.println("No active loan found for this book.");
 }
 
+public static void listActiveLoans() {
+    System.out.println("\n--- Active Loans ---");
+    boolean hasActive = false;
+    for (Loan l : loans) {
+        if (l.getStatus().equals("Active")) {
+            System.out.println("Loan ID: " + l.getLoanId() + " | Client: " + l.getClient().getName() + " | Book: " + l.getBook().getTitle());
+            hasActive = true;
+        }
+    }
+    if (!hasActive) {
+        System.out.println("No active loans at the moment.");
+    }
+}
+
 
 
     
