@@ -111,6 +111,22 @@ public static Book findBookByCode(String code) {
     return null;
 }
 
+public static void updateBook() {
+    System.out.println("\n--- Update Book ---");
+    System.out.print("Enter Book Code to update: ");
+    String code = sc.nextLine();
+    Book b = findBookByCode(code);
+    if (b == null) {
+        System.out.println("Book not found.");
+        return;
+    }
+    System.out.print("New Title (" + b.getTitle() + "): "); 
+    b.title = sc.nextLine();
+    System.out.print("New Publication Year (" + b.getPublicationYear() + "): "); 
+    b.publicationYear = sc.nextLine();
+    System.out.println("Book updated successfully.");
+}
+
 
     
 }
