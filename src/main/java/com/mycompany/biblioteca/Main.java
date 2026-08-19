@@ -35,5 +35,13 @@ public static void listClients() {
         System.out.println("ID: " + c.getId() + " | Name: " + c.getName() + " | Phone: " + c.getPhone() + " | Email: " + c.getEmail());
     }
 }
+public static Client findClientById(String id) {
+    for (Client c : clients) {
+        if (c.getId().equals(id)) {
+            return c;
+        }
+    }
+    return null;
+}
     
 }
