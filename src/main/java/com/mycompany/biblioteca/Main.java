@@ -25,5 +25,15 @@ public static void createClient() {
     clients.add(new Client(id, name, phone, email));
     System.out.println("Client registered successfully.");
 }
+public static void listClients() {
+    System.out.println("\n--- Client List ---");
+    if (clients.isEmpty()) {
+        System.out.println("No registered clients found.");
+        return;
+    }
+    for (Client c : clients) {
+        System.out.println("ID: " + c.getId() + " | Name: " + c.getName() + " | Phone: " + c.getPhone() + " | Email: " + c.getEmail());
+    }
+}
     
 }
